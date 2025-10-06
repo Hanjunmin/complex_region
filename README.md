@@ -4,5 +4,5 @@ A repo for code and methods related to analyses and figures.
 including:
 1. Complex region decomposition (indices and model)
 2. 2q11 haplotype decomposition
-3. Disease and complex region association
+3. Association between diseases and complex Regions
 4. Pan-SD and Pan-VNTR pipeline
