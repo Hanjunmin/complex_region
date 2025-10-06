@@ -3,7 +3,7 @@ from collections import defaultdict
 import lmdb
 import re
 import msgpack
-import warnings# 忽略所有警告
+import warnings
 import argparse
 warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser(description='Pan-VNTR-coordi')
@@ -71,3 +71,4 @@ df['s'] = df[6].str.split('@', expand=True)[3]
 # df.drop([12, 13,'s'], axis=1, inplace=True)
 
 df.to_csv(sam+".out", sep='\t', index=False)
+
