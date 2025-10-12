@@ -9,8 +9,8 @@ A Snakemake-based automated workflow for genome-wide identification and characte
 ### Installation & Usage
 1. Clone Repository
 ```
-git clone https://github.com/your-username/complex-region-decomposition.git
-cd complex-region-decomposition
+git clone https://github.com/Hanjunmin/complex_region.git
+cd 01_complexregion_decomposition
 ```
 2. Setup Environment
 ```
