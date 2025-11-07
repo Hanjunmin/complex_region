@@ -110,7 +110,7 @@ run/03_model/
 
 ### Annotation Results
 
-**final_anno.complex.png**:  
+**`final_anno.complex.png`**:  
 ![Complex Region Decomposition Analysis](https://raw.githubusercontent.com/Hanjunmin/complex_region/main/01_complexregion_decomposition/complex_decom/output/final_anno.complex.png)
 
 This plot shows the complexity annotation of genomic regions.  
@@ -118,7 +118,7 @@ This plot shows the complexity annotation of genomic regions.
 - The **y-axis** represents the cluster probability.  
 - The **x-axis** shows the genomic position of each region.
 
-**Example data from final.anno:**
+**Example data from `final.anno`:**
 ```
 chr     start   end     cluster simple  CC1     CC2     CC3     CC4     CC5     CC6     CC7
 chr1    12054001        12055000        simple  0.8592633       0.011185256     0.06440703      0.005208004     0.002919506     0.0015025395    0.0013939425    0.054120403
