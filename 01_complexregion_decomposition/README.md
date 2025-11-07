@@ -134,3 +134,18 @@ chr1    12055001        12056000        simple  0.8765505       0.011200878     
 | `cluster` | Cluster classification |
 | `simple` | Simple region probability score |
 | `CC1` - `CC7` | Complex component probability scores |
+
+## Overview
+
+`complex_decom.smk` workflow for analyzing complex genomic regions, including preprocessing, index construction, and clustering analysis.
+
+The workflow includes three main modules:
+
+1. **Preprocessing (`preproc`)**  
+   Generates basic files for regions, including genome windows, sample paths, and segment databases...
+
+2. **Index Construction (`index_construction`)**  
+   Builds indices and annotation files for each genome windows.
+
+3. **Clustering Model (`clustering_model`)**  
+   Performs clustering analysis on genomic regions using a DeepClustering model.
