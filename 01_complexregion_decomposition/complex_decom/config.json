@@ -1,0 +1,13 @@
+{
+  "threads": 20,
+  "script_dir":"/home/jmhan/project/APG/github_final/1p_26_end/complex_decom/",
+  "base_dir":"/home/jmhan/project/APG/github_final/1p_26_end/run/",
+  "data_dir":"/home/jmhan/project/APG/github_final/1p_26_end/example/",
+  "reference":"/home/jmhan/breakpoints/chm13v2.0.fa",
+  "software": {
+    "gfabase": "/home/jmhan/pangenome/software/gfabase",
+    "RM":"/home/Public/software/RepeatMasker-4.1.4/",
+    "TRF":"/home/Public/software/trf-4.09.1/trf"
+  }
+  
+}
