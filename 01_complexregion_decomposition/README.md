@@ -104,12 +104,33 @@ run/03_model/
 ├── final_anno.complex.pdf    # Visualization plot (PDF format)
 └── final.anno                # Annotation results file
 ```
-### Visualization Results
 
+
+
+
+### Annotation Results
+
+**final_anno.complex.png**:  
 ![Complex Region Decomposition Analysis](https://raw.githubusercontent.com/Hanjunmin/complex_region/main/01_complexregion_decomposition/complex_decom/output/final_anno.complex.png)
 
-This plot displays:
-- Genomic regions colored by cluster classification
-- Probability scores for simple vs complex components
-- Spatial distribution of complex features along the chromosome
-- Component-wise contribution patterns (CC1-CC7)
+This plot shows the complexity annotation of genomic regions.  
+- Regions are colored by type: **simple** or complex clusters (**CC1–CC7**).  
+- The **y-axis** represents the cluster probability.  
+- The **x-axis** shows the genomic position of each region.
+
+**Example data from final.anno:**
+```
+chr     start   end     cluster simple  CC1     CC2     CC3     CC4     CC5     CC6     CC7
+chr1    12054001        12055000        simple  0.8592633       0.011185256     0.06440703      0.005208004     0.002919506     0.0015025395    0.0013939425    0.054120403
+chr1    12054501        12055500        simple  0.85257804      0.011569369     0.06705679      0.0053913686    0.0030226677    0.0015524194    0.0014420691    0.057387255
+chr1    12055001        12056000        simple  0.8765505       0.011200878     0.058783863     0.005138364     0.0028743104    0.001511905     0.0013829212    0.04255722
+```
+**Columns in `final.anno`:**
+| Column | Description |
+|--------|-------------|
+| `chr` | Chromosome |
+| `start` | Start genomic position |
+| `end` | End genomic position |
+| `cluster` | Cluster classification |
+| `simple` | Simple region probability score |
+| `CC1` - `CC7` | Complex component probability scores |
