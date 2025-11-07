@@ -68,3 +68,16 @@ The config.json file allows you to define all paths and parameters. Here's a com
 
 > ⚠️ All paths should be absolute to avoid errors in Snakemake.
 
+## Example Data
+
+The example dataset includes the following files (available on Zenodo: [Download here]):
+├── 1p36.bed       # Genomic regions
+├── 1p36.gfa       # Graph 
+├── 1p36.vcf       # Variant calls
+├── FA/            # FASTA sequences for all samples, each file named as `<sample_id>.fa` (e.g., `C001-CHA-E01-Mat.fa`)
+├── samlis.txt     # Sample list
+
+
+
+
+
