@@ -70,7 +70,8 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
 
 ## Example Data
 
-The example dataset includes the following files (available on Zenodo: [Download here]):
+The example dataset includes the following files ([Download here](https://synplotter.sjtu.edu.cn/disk2/)):
+
 ```
 example_dataset/
 ├── 1p36.bed                 # Genomic regions
