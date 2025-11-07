@@ -78,6 +78,17 @@ The example dataset includes the following files (available on Zenodo: [Download
 ├── samlis.txt     # Sample list
 
 
+### Sample List (`samlis.txt`)
+
+| Sample ID           | Type       |
+|--------------------|------------|
+| CHM13v2             | reference  |
+| C001-CHA-E01-Mat    | .          |
+| C001-CHA-E01-Pat    | .          |
+
+> ⚠️ Make sure that the sample IDs in `samlis.txt` match the FASTA filenames in the `FA/` directory (e.g., `C001-CHA-E01-Mat.fa`).
+
+
 
 
 
