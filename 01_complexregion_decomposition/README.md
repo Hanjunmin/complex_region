@@ -31,7 +31,7 @@ snakemake -n ../complex_decom/complex_decom.smk -j 20
 ```
 
 ### ⚙️ Configuration
-The config.json file allows you to define all paths and parameters. Here's a comprehensive example:
+The `config.json` file allows you to define all paths and parameters. Here's a comprehensive example:
 
 ```
 # config.json
