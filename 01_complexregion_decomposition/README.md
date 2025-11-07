@@ -52,19 +52,19 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
 ```
 ## Configuration Explanation
 
-- **script_dir**: Directory containing workflow-related scripts, including Snakemake rules, Python scripts, and other auxiliary files. This directory is usually part of the cloned GitHub repository and is used as the main location for workflow execution.
+- **`script_dir`**: Directory containing workflow-related scripts, including Snakemake rules, Python scripts, and other auxiliary files. This directory is usually part of the cloned GitHub repository and is used as the main location for workflow execution.
 
 
-- **base_dir**: Working directory (output files will be generated here)
+- **`base_dir`**: Working directory (output files will be generated here)
 
-- **data_dir**: Input/example data directory
+- **`data_dir`**: Input/example data directory
 
-- **reference**: Reference genome sequence path
+- **`reference`**: Reference genome sequence path
 
-- **software**: Dictionary of software paths
-  - **gfabase**: Path to gfabase installation
-  - **RM**: Path to RepeatMasker
-  - **TRF**: Path to Tandem Repeat Finder
+- **`software`**: Dictionary of software paths
+  - **`gfabase`**: Path to gfabase installation
+  - **`RM`**: Path to RepeatMasker
+  - **`TRF`**: Path to Tandem Repeat Finder
 
 > ⚠️ All paths should be absolute to avoid errors in Snakemake.
 
