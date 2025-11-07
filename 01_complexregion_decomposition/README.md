@@ -129,8 +129,8 @@ chr1    12055001        12056000        simple  0.8765505       0.011200878     
 | Column | Description |
 |--------|-------------|
 | `chr` | Chromosome |
-| `start` | Start genomic position |
-| `end` | End genomic position |
+| `start` | Start |
+| `end` | End |
 | `cluster` | Cluster classification |
 | `simple` | Simple region probability score |
 | `CC1` - `CC7` | Complex component probability scores |
