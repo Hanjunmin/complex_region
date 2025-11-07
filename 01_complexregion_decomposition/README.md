@@ -71,14 +71,21 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
 ## Example Data
 
 The example dataset includes the following files (available on Zenodo: [Download here]):
-├── 1p36.bed       # Genomic regions
-├── 1p36.gfa       # Graph 
-├── 1p36.vcf       # Variant calls
-├── FA/            # FASTA sequences for all samples, each file named as `<sample_id>.fa` (e.g., `C001-CHA-E01-Mat.fa`)
-├── samlis.txt     # Sample list
+```
+example_dataset/
+├── 1p36.bed                 # Genomic regions
+├── 1p36.gfa                 # Graph
+├── 1p36.vcf                 # Variant calls
+├── FA/                      # FASTA sequences directory
+│   ├── C001-CHA-E01-Mat.fa  # Sample FASTA files
+│   ├── C002-CHA-E02-Pat.fa
+│   ├── ... (other samples)
+│   └── <sample_id>.fa       # Each file named as <sample_id>.fa
+└── samlis.txt               # Sample list
+```
 
 
-### Sample List (`samlis.txt`)
+Sample List： (`samlis.txt`)
 
 | Sample ID           | Type       |
 |--------------------|------------|
