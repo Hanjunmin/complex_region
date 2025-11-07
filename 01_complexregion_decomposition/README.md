@@ -95,7 +95,21 @@ Sample List： (`samlis.txt`)
 
 > ⚠️ Make sure that the sample IDs in `samlis.txt` match the FASTA filenames in the `FA/` directory (e.g., `C001-CHA-E01-Mat.fa`).
 
+## Output Data
+The analysis pipeline generates the following output files in the `run/03_model/` directory:
 
+```
+run/03_model/
+├── final_anno.complex.png    # Visualization plot (PNG format)
+├── final_anno.complex.pdf    # Visualization plot (PDF format)
+└── final.anno                # Annotation results file
+```
+### Visualization Results
 
+![Complex Region Decomposition Analysis](https://raw.githubusercontent.com/Hanjunmin/complex_region/main/01_complexregion_decomposition/complex_decom/output/final_anno.complex.png)
 
-
+This plot displays:
+- Genomic regions colored by cluster classification
+- Probability scores for simple vs complex components
+- Spatial distribution of complex features along the chromosome
+- Component-wise contribution patterns (CC1-CC7)
