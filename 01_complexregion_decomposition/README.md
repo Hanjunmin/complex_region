@@ -70,7 +70,7 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
 
 ## Example Data
 
-The example dataset includes the following files ([Download here](https://synplotter.sjtu.edu.cn/disk2/)):
+The example dataset includes the following files ([Download here](https://synplotter.sjtu.edu.cn/disk2/COMPLEX/com_analysis/example_1/)):
 
 ```
 example_dataset/
