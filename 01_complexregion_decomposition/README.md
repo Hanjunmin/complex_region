@@ -13,9 +13,21 @@ git clone https://github.com/Hanjunmin/complex_region.git
 cd 01_complexregion_decomposition
 ```
 2. Setup Environment
+The workflow can run either in a Conda environment or inside a Singularity container.
+#### Using Conda
 ```
 conda env create -f envs/decomposition.yaml
-conda activate complex-region-decomposition
+conda activate com_decom
+```
+####Using Singularity
+Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file) is properly bound before running Snakemake:
+```
+singularity exec \
+  --bind /home/miniconda3/envs/com_decom/share/RepeatMasker/Libraries/famdb:/opt/conda/envs/com_decom/share/RepeatMasker/Libraries/famdb \
+  com_decom_v1.0.1.sif \
+  snakemake -s complex_decom.smk \
+            --configfile config.json \
+            -j 50 -p
 ```
 3. Prepare a New Run Directory and Configuration
 ```
