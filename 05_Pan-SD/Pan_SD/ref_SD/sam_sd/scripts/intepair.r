@@ -1,0 +1,11 @@
+library(data.table)
+cor=fread("cor.id",header=FALSE)
+pair=fread("reprocess.pairall",header=FALSE)
+colnames(pair)=c("A","B")
+cor1=cor
+colnames(cor1)<-c("A","A.cor")
+cor2=cor
+colnames(cor2)<-c("B","B.cor")
+pairleft<-merge(pair,cor1,by="A",all.x=TRUE)
+pairright<-merge(pairleft,cor2,by="B",all.x=TRUE)
+fwrite(pairright,"pairall",sep="\t")
