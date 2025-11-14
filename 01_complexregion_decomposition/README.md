@@ -19,7 +19,7 @@ The workflow can run either in a Conda environment or inside a Singularity conta
 conda env create -f envs/decomposition.yaml
 conda activate com_decom
 ```
-####Using Singularity
+#### Using Singularity
 Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file) is properly bound before running Snakemake:
 ```
 singularity exec \
