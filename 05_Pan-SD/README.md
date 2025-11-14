@@ -118,50 +118,21 @@ The analysis pipeline generates the following output files in the `run/output/` 
 
 ### Annotation Results
 
-**`final_anno.complex.png`**:  
-![Complex Region Decomposition Analysis](https://raw.githubusercontent.com/Hanjunmin/complex_region/main/01_complexregion_decomposition/complex_decom/output/final_anno.complex.png)
-
-This plot shows the complexity annotation of genomic regions.  
-- Regions are colored by type: **simple** or complex clusters (**CC1–CC7**).  
-- The **y-axis** represents the cluster probability.  
-- The **x-axis** shows the genomic position of each region.
-
-**Example data from `final.anno`:**
+**Example data from `*SD.anno`:**
 ```
-chr     start   end     cluster simple  CC1     CC2     CC3     CC4     CC5     CC6     CC7
-chr1    12054001        12055000        simple  0.8592633       0.011185256     0.06440703      0.005208004     0.002919506     0.0015025395    0.0013939425    0.054120403
-chr1    12054501        12055500        simple  0.85257804      0.011569369     0.06705679      0.0053913686    0.0030226677    0.0015524194    0.0014420691    0.057387255
-chr1    12055001        12056000        simple  0.8765505       0.011200878     0.058783863     0.005138364     0.0028743104    0.001511905     0.0013829212    0.04255722
+chr_A	start_A	end_A	chr_B	start_B	end_B	sample	identity	init_pair	graph_alignA	graph_alignB	graph_align_ratioA	graph_align_ratioB
+CHM13v2_chr1	100000	101500	CHM13v2_chr2	500000	501400	CHM13v2	0.98	chr1:100000-101500@chr2:500000-501400 (reference)	1	1	1.0	1.0
+C001-CHA-E01-Pat_chr5	200500	201800	C001-CHA-E01-Pat_chr7	150300	151450	C001-CHA-E01-Pat	0.95	C001-CHA-E01-Pat_chr5:200500-201800@chr7:150300-151450 (non-reference)	1	0	1.0	0.0
+C002-CHA-E02-Mat_chr3	305200	306700	C002-CHA-E02-Mat_chr10	450100	451250	C002-CHA-E02-Mat	0.93	C002-CHA-E02-Mat_chr3:305200-306700@chr10:450100-451250 (non-reference)	0	1	0.0	0.9
+
 ```
-**Columns in `final.anno`:**
-| Column | Description |
-|--------|-------------|
-| `chr` | Chromosome |
-| `start` | Start |
-| `end` | End |
-| `cluster` | Cluster classification |
-| `simple` | Simple region probability score |
-| `CC1` - `CC7` | Complex component probability scores |
-
-## Overview
-
-`complex_decom.smk` workflow for analyzing complex genomic regions, including preprocessing, index construction, and clustering analysis.
-
-The workflow includes three main modules:
-
-1. **Preprocessing (`preproc`)**  
-   Generates basic files for regions, including genome windows, sample paths, and segment databases...
-
-2. **Index Construction (`index_construction`)**  
-   Builds indices and annotation files for each genome windows.
-
-3. **Clustering Model (`clustering_model`)**  
-   Performs clustering analysis on genomic regions using a DeepClustering model.
-
-
-
-## Overview
-
-`Pan_SDanno.smk` workflow for identification of Pan-SD, including reference SDs and non-reference SDs.
-
-The workflow are shown:
+**Columns in `*SD.anno`:**
+| Column                                     | Description                                                                                                                                                                                |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `chr_A`, `start_A`, `end_A`                | Coordinates of the SD in **region A**, based on the sample’s genome.                                                        |
+| `chr_B`, `start_B`, `end_B`                | Coordinates of the SD in **region B**, based on the sample’s genome.                                                                                                                   |
+| `sample`                                   | Sample name (e.g., `CHM13v2`, `GRCh38`, `C001-CHA-E01-Pat`).                                                                                                                         |
+| `init_pair_A_B`                                | SD pair coordinates originates from the **reference** or **non-reference**. Each init_pair defines the “canonical” SD to compare across samples. |
+| `identity`                                 | Sequence identity between regions A and B for this sample.                                                                                                                                 |
+| `graph_alignA`, `graph_alignB`             | Binary values (0 or 1) indicating whether the sample aligns to region A or B in the pangenome graph.                                                                                       |
+| `graph_align_ratioA`, `graph_align_ratioB` | Fraction of region A or B that aligns in the pangenome graph (continuous value between 0 and 1).                                                                                           |
