@@ -20,7 +20,7 @@ conda env create -f envs/decomposition.yaml
 conda activate com_decom
 ```
 #### Using Singularity
-Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file) is properly bound before running Snakemake:
+Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file, you can download at https://www.dfam.org/releases/current/families/FamDB/.) is properly bound before running Snakemake:
 ```
 singularity exec \
   --bind /home/miniconda3/envs/com_decom/share/RepeatMasker/Libraries/famdb:/opt/conda/envs/com_decom/share/RepeatMasker/Libraries/famdb \
