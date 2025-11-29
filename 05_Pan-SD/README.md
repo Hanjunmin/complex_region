@@ -10,21 +10,25 @@ A Snakemake-based automated workflow for Pan-SD analysis based on pangenome grap
 ### 🚀 Quick Start
 
 ### Installation & Usage
-1. Clone Repository
-```
-git clone https://github.com/Hanjunmin/complex_region.git
-cd 05_Pan-SD
+Refer to the [complex_region_decomposition](https://github.com/Hanjunmin/complex_region/tree/main/01_complexregion_decomposition) repository for:
+
+- **Environment setup** using Docker or Conda
+- **RepeatMasker configuration** with similar database requirements
 
 ```
-2. Setup Environment
-The workflow can run either in a Conda environment or inside a Singularity container.
-#### Using Conda
+cd 05_Pan-SD/
+wget https://synplotter.sjtu.edu.cn/disk2/COMPLEX/com_analysis/inter_kmer_DB/inter_seg_kmer.pkl ./Pan_SD/inter_sim/DB/
 ```
-conda env create -f decomposition.yaml
-conda activate pan_SD
+
+### Prepare a New Run Directory and Configuration
 ```
-#### Using Singularity
-Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file) is properly bound before running Snakemake:
+# edit configuration files
+mkdir -p run
+cd run
+touch config.json
+```
+### Run Pipeline
+
 ```
 singularity exec \
   --bind /home/miniconda3/envs/com_decom/share/RepeatMasker/Libraries/famdb:/opt/conda/envs/com_decom/share/RepeatMasker/Libraries/famdb \
@@ -32,18 +36,6 @@ singularity exec \
   snakemake -s ../Pan_SD/PanSD_anno.smk \
             --configfile config.json \
             -j 50 -p
-```
-3. Prepare a New Run Directory and Configuration
-```
-# edit configuration files
-mkdir -p run
-cd run
-touch config.json
-```
-4. Run Pipeline
-```
-# Execute workflow (with 20 jobs now)
-snakemake -n ../Pan_SD/PanSD_anno.smk -j 20
 ```
 
 ### ⚙️ Configuration
@@ -57,11 +49,6 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
   "script_dir": "05_Pan-SD/Pan_SD/",
   "base_dir": "05_Pan-SD/Pan_SD/run/",
   "data_dir": "05_Pan-SD/Pan_SD/example/",
-  "software": {
-    "gfabase": "/home/pangenome/software/gfabase",
-    "RM": "/home/Public/software/RepeatMasker-4.1.4/",
-    "TRF": "/home/Public/software/trf-4.09.1/trf"
-  }
 }
 
 ```
@@ -73,11 +60,6 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
 - **`base_dir`**: Working directory (output files will be generated here)
 
 - **`data_dir`**: Input/example data directory
-
-- **`software`**: Dictionary of software paths
-  - **`gfabase`**: Path to gfabase installation
-  - **`RM`**: Path to RepeatMasker
-  - **`TRF`**: Path to Tandem Repeat Finder
 
 > ⚠️ All paths should be absolute to avoid errors in Snakemake.
 
