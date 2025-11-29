@@ -24,14 +24,7 @@ conda activate com_decom
 Use the image from the [latest release](https://hub.docker.com/repository/docker/kkaab/com_decom/tags/latest/).
 
 Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file, you can download at https://www.dfam.org/releases/current/families/FamDB/.) is properly bound before running Snakemake:
-```
-singularity exec \
-  --bind /home/miniconda3/envs/com_decom/share/RepeatMasker/Libraries/famdb:/opt/conda/envs/com_decom/share/RepeatMasker/Libraries/famdb \
-  com_decom_v1.0.1.sif \
-  snakemake -s complex_decom.smk \
-            --configfile config.json \
-            -j 50 -p
-```
+
 ### 3. Prepare a New Run Directory and Configuration
 ```
 # Copy and edit configuration files
@@ -41,8 +34,12 @@ cp ../complex_decom/config.json ./
 ```
 ### 4. Run Pipeline
 ```
-# Execute workflow (with 20 jobs now)
-snakemake -n ../complex_decom/complex_decom.smk -j 20
+singularity exec \
+  --bind /home/miniconda3/envs/com_decom/share/RepeatMasker/Libraries/famdb:/opt/conda/envs/com_decom/share/RepeatMasker/Libraries/famdb \
+  com_decom_v1.0.1.sif \
+  snakemake -s complex_decom.smk \
+            --configfile config.json \
+            -j 50 -p
 ```
 
 ### ⚙️ Configuration
