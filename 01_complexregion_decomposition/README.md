@@ -53,12 +53,7 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
   "script_dir": "01_complexregion_decomposition/complex_decom/",
   "base_dir": "01_complexregion_decomposition/run/",
   "data_dir": "01_complexregion_decomposition/example/",
-  "reference": "/home/chm13v2.0.fa",
-  "software": {
-    "gfabase": "/home/pangenome/software/gfabase",
-    "RM": "/home/Public/software/RepeatMasker-4.1.4/",
-    "TRF": "/home/Public/software/trf-4.09.1/trf"
-  }
+  "reference": "/home/chm13v2.0.fa"
 }
 
 ```
@@ -73,10 +68,6 @@ The `config.json` file allows you to define all paths and parameters. Here's a c
 
 - **`reference`**: Reference genome sequence path
 
-- **`software`**: Dictionary of software paths
-  - **`gfabase`**: Path to gfabase installation
-  - **`RM`**: Path to RepeatMasker
-  - **`TRF`**: Path to Tandem Repeat Finder
 
 > ⚠️ All paths should be absolute to avoid errors in Snakemake.
 
