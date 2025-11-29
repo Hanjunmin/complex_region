@@ -31,14 +31,14 @@ singularity exec \
             --configfile config.json \
             -j 50 -p
 ```
-3. Prepare a New Run Directory and Configuration
+### 3. Prepare a New Run Directory and Configuration
 ```
 # Copy and edit configuration files
 mkdir -p run
 cd run
 cp ../complex_decom/config.json ./
 ```
-4. Run Pipeline
+### 4. Run Pipeline
 ```
 # Execute workflow (with 20 jobs now)
 snakemake -n ../complex_decom/complex_decom.smk -j 20
