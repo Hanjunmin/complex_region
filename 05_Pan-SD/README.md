@@ -10,7 +10,7 @@ A Snakemake-based automated workflow for Pan-SD analysis based on pangenome grap
 ### 🚀 Quick Start
 
 ### Installation & Usage
-Refer to the [complex_region_decomposition](https://github.com/Hanjunmin/complex_region/tree/main/01_complexregion_decomposition) repository for:
+Refer to the [complex_region_decomposition](https://github.com/Hanjunmin/complex_region/tree/main/01_complexregion_decomposition) part for:
 
 - **Environment setup** using Docker or Conda
 - **RepeatMasker configuration** with similar database requirements
