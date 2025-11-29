@@ -7,13 +7,13 @@ A Snakemake-based automated workflow for genome-wide identification and characte
 ### 🚀 Quick Start
 
 ### Installation & Usage
-1. Clone repository and set up inter-segment homology k-mer database.
+### 1. Clone repository and set up inter-segment homology k-mer database.
 ```
 git clone https://github.com/Hanjunmin/complex_region.git
 cd 01_complexregion_decomposition
 wget https://synplotter.sjtu.edu.cn/disk2/COMPLEX/com_analysis/inter_kmer_DB/inter_seg_kmer.pkl ./complex_decom/index_construction/scripts/seg_homo/DB/
 ```
-2. Setup Environment
+### 2. Setup Environment
 The workflow can run either in a Conda environment or inside a Singularity container.
 #### Using Conda
 ```
