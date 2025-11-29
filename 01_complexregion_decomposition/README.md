@@ -21,7 +21,8 @@ conda env create -f envs/decomposition.yaml
 conda activate com_decom
 ```
 #### Using docker image
-Use the image from the [latest release](https://hub.docker.com/repository/docker/kkaab/com_decom/tags/latest/)
+Use the image from the [latest release](https://hub.docker.com/repository/docker/kkaab/com_decom/tags/latest/).
+
 Make sure the RepeatMasker database (For human, `dfam39_full.7.h5` is needed, and `dfam39_full.0.h5` must exist as the root file, you can download at https://www.dfam.org/releases/current/families/FamDB/.) is properly bound before running Snakemake:
 ```
 singularity exec \
