@@ -39,7 +39,7 @@ singularity exec \
   com_decom_v1.0.1.sif \
   snakemake -s complex_decom.smk \
             --configfile config.json \
-            -j 50 -p
+            -j <cores> -p
 ```
 
 ### ⚙️ Configuration
@@ -98,6 +98,7 @@ Sample List： (`samlis.txt`)
 | C001-CHA-E01-Pat    | .          |
 
 > ⚠️ Make sure that the sample IDs in `samlis.txt` match the FASTA filenames in the `FA/` directory (e.g., `C001-CHA-E01-Mat.fa`).
+The assembly index must named as their sample_id and haplotype according to the [PanSN-spec](https://github.com/pangenome/PanSN-spec), This is consistent with the chromosome name in GFA.
 
 ## Output Data
 The analysis pipeline generates the following output files in the `run/03_model/` directory:
