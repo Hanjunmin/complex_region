@@ -1,4 +1,4 @@
-# Human genome complexity and its biomedical insights from the pangenome graph
+# Human genome complexity and its biomedical insights from the pangenome graph 👀
 
 A repo for orignal code and methods related to analyses and figures generation for the complex region study
 
